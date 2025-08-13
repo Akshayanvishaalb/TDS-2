@@ -148,3 +148,8 @@ async def analyze(request: Request):
             return JSONResponse(content=data)
         except Exception as e:
             return JSONResponse({"message": f"Error occured while processing reult.json: {e}"})
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # Render sets PORT env var
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
