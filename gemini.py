@@ -4,7 +4,8 @@ import google.generativeai as genai
 import re
 
 # Get the API key from environment variable
-api_key = "AIzaSyAbxZ9T0VTUgmgCbahG7ZVL3TUTBnzhXro"
+api_key = os.environ.get("GEMINI_API_KEY")
+
 
 if not api_key:
     raise ValueError("GENAI_API_KEY environment variable is not set.")
